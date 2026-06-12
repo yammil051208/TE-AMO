@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Ti ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <audio id="musica">
+        <source src="nadie_mas.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="card">
+        <h1>Para Ti ❤️</h1>
+
+        <p>
+           No prometo ser perfecto, pero sí prometo estar a tu lado, escucharte, apoyarte y elegirte todos los días. Porque amarte no es solo lo que siento, también es la decisión que quiero tomar una y otra vez.
+        </p>
+
+        <button onclick="iniciar()">
+            ❤️ Haz clic aquí ❤️
+        </button>
+
+        <p id="mensaje"></p>
+    </div>
+
+    <script>
+        function crearCorazon(){
+
+            const corazon = document.createElement("div");
+
+            corazon.classList.add("corazon");
+
+            corazon.innerHTML = "❤️";
+
+            corazon.style.left = Math.random() * window.innerWidth + "px";
+            corazon.style.fontSize = (20 + Math.random()*30) + "px";
+
+            document.body.appendChild(corazon);
+
+            setTimeout(()=>{
+                corazon.remove();
+            },6000);
+        }
+
+        function iniciar(){
+
+            document.getElementById("mensaje").innerHTML =
+            "Preciosa solo quiero que nunca olvides que te amo con todo mi corazón. No importa lo que pase, los días buenos o los difíciles, siempre voy a estar para 		ti. Quiero ser esa persona con la que puedas contar cuando estés feliz, cuando necesites un abrazo, cuando quieras desahogarte o simplemente cuando 		necesites sentir que no estás sola. Siempre tendrás un lugar seguro en mí. Te amo muchísimo. ❤️";
+
+            document.getElementById("musica").play();
+
+            setInterval(crearCorazon,250);
+        }
+    </script>
+
+</body>
+</html>
